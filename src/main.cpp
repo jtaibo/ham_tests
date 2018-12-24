@@ -14,8 +14,13 @@ int main(int argc, char *argv[])
 
 #if 1
 	std::shared_ptr<AudioCapture> audio = std::make_shared<AudioCapture>();
-
 	audio->enumerateDevices();
+	audio->open(1, 3);
+	audio->start();
+	Sleep(10000);
+	audio->stop();
+	audio->close();
+
 #endif
 
 #if 0
